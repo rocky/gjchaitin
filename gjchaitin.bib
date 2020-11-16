@@ -1,0 +1,154 @@
+@inproceedings{PL8,
+  author = {Auslander, Marc and Hopkins, Martin},
+  title = "An Overview of the {PL.8} Compiler",
+  year = {1982},
+  isbn = {0897910745},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/800230.806977},
+  abstract = {The PL.8 compiler accepts multiple source languages and produces high quality object code for several different machines. The strategy used is to first do a simple translation of the source program to a low level intermediate language. Global optimization and register allocation are then used to improve code rather than relying on special case code selection. \url{http://rsim.cs.uiuc.edu/arch/qual_papers/compilers/auslander82.pdf}},
+  booktitle = {Proceedings of the 1982 SIGPLAN Symposium on Compiler Construction},
+  pages = {22–31},
+  numpages = {10},
+  location = {Boston, Massachusetts, USA},
+  series = {SIGPLAN '82},
+}
+
+@misc{PL8-online,
+  author = {Auslander, Marc and Hopkins, Martin},
+  title = "An Overview of the {PL.8} Compiler",
+  year = {1982},
+  howpublished = "\url{http://rsim.cs.uiuc.edu/arch/qual_papers/compilers/auslander82.pdf}",
+  note = "On-line pdf"
+}
+
+@misc{PL8-Wiki,
+   title = "{PL/8}",
+   author = "{Wiki}",
+   howpublished = "\url{https://en.wikipedia.org/wiki/PL/8}",
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@misc{801,
+   title="{IBM} 801",
+   author = {Wiki},
+   howpublished ="\url{https://en.wikipedia.org/wiki/IBM_801}",
+   journal={Wikipedia},
+   publisher={Wikimedia Foundation},
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@misc{POWER,
+   title={{IBM} {POWER} microprocessors},
+   author = {Wiki},
+   howpublished="\url{https://en.wikipedia.org/wiki/IBM_POWER_microprocessors}",
+   journal={Wikipedia},
+   publisher={Wikimedia Foundation},
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@misc{Archimedes,
+   title = "{Archimedes}",
+   author = "{Wiki}",
+   howpublished = "\url{https://en.wikipedia.org/wiki/Archimedes}",
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@article{Chaitin1,
+   title = "Register allocation via coloring",
+   journal = "Computer Languages",
+   volume = "6",
+   number = "1",
+   pages = "47 - 57",
+   year = "1981",
+   issn = "0096-0551",
+   doi = "https://doi.org/10.1016/0096-0551(81)90048-5",
+   url = "http://www.sciencedirect.com/science/article/pii/0096055181900485",
+   author = "Gregory J. Chaitin and Marc A. Auslander and Ashok K. Chandra and John Cocke and Martin E. Hopkins and Peter W. Markstein",
+   keywords = "Register allocation, Optimizing compilers, Graph coloring",
+   abstract = "Register allocation may be viewed as a graph coloring problem. Each node in the graph stands for a computed quantity that resides in a machine register, and two nodes are connected by an edge if the quantities interfere with each other, that is, if they are simultaneously live at some point in the object program. This approach, though mentioned in the literature, was never implemented before. Preliminary results of an experimental implementation in a PL/I optimizing compiler suggest that global register allocation approaching that of hand-coded assembly language may be attainable."
+}
+
+@inproceedings{Chaitin2,
+author = {Chaitin, G. J.},
+title = {Register Allocation and Spilling via Graph Coloring},
+year = {1982},
+isbn = {0897910745},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/800230.806984},
+doi = {10.1145/800230.806984},
+abstract = {In a previous paper we reported the successful use of graph coloring techniques for doing global register allocation in an experimental PL/I optimizing compiler. When the compiler cannot color the register conflict graph with a number of colors equal to the number of available machine registers, it must add code to spill and reload registers to and from storage. Previously the compiler produced spill code whose quality sometimes left much to be desired, and the ad hoe techniques used took considerable amounts of compile time. We have now discovered how to extend the graph coloring approach so that it naturally solves the spilling problem. Spill decisions are now made on the basis of the register conflict graph and cost estimates of the value of keeping the result of a computation in a register rather than in storage. This new approach produces better object code and takes much less compile time.},
+booktitle = {Proceedings of the 1982 SIGPLAN Symposium on Compiler Construction},
+pages = {98–105},
+numpages = {8},
+location = {Boston, Massachusetts, USA},
+series = {SIGPLAN '82}
+}
+
+@misc{APL2-Gallery,
+   author = {Chaitin, G. J.},
+   title={A Computer Gallery of Mathematical Physics--A Course Outline},
+   howpublished = "\url{http://www.softwarepreservation.org/projects/apl/Papers/ComputerGallery}",
+   journal={Wikipedia},
+   publisher={IBM Research},
+   year={1985},
+   numpages = {54},
+   month={Mar}
+}
+
+@misc{live,
+   title={Live variable analysis},
+   author = {Wiki},
+   howpublished = "\url{https://en.wikipedia.org/wiki/Live_variable_analysis}",
+   journal={Wikipedia},
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@misc{PIC,
+   title={Position-independent code},
+   author = {Wiki},
+   howpublished= "\url{https://en.wikipedia.org/wiki/Position-independent_code}",
+   year={2020},
+   note = "Accessed 2020-11-13"
+}
+
+@book{dragon,
+   address={New York},
+   title={Principles of Compiler Design},
+   publisher={Addison-Wesley},
+   author={Aho, Alfred V.~and Ullman, Jeffrey},
+   isbn={0-201-00022-9},
+   year={1977}
+}
+
+@book{gries,
+   address={New York},
+   title={Compiler construction for digital computers},
+   publisher={Wiley},
+   author={Gries, David},
+   isbn={978-0471327769},
+   year={1977}
+}
+
+@book{mckeeman,
+   place={Englewood Cliffs, NJ},
+   title={A Compiler Generator},
+   publisher={Prentice-Hall},
+   author={Mckeeman, William M. and Horning, James J. and Wortman, David B.},
+   isbn={9780131550773},
+   year={1970}
+}
+
+@misc{TOC,
+   title = "Overview TOC AIX",
+   author = "{IBM}",
+   howpublished = "\url{https://www.ibm.com/developerworks/rational/library/overview-toc-aix/index.html}",
+   year={2020},
+   note = "Accessed 2020-11-13"
+}

@@ -1,0 +1,9 @@
+*.aux
+*.dvi
+*.log
+*.out
+*~
+/gjchaitin.bbl
+/gjchaitin.blg
+/gjchaitin.pdf
+/gjchaitin.ps
