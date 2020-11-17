@@ -104,9 +104,9 @@ References
 * [A Computer Gallery of Mathematical Physics--A Course Outline](http://www.softwarepreservation.org/projects/apl/Papers/ComputerGallery)
 * [Live variable analysis](https://en.wikipedia.org/wiki/Live_variable_analysis)
 * [Position-independent code](https://en.wikipedia.org/wiki/Position-independent_code)
-* Principles of Compiler Design, 1st Edition
-* Compiler construction for Digital Computers
-* A Compiler Generator,
+* [Principles of Compiler Design, 1st Edition](https://en.wikipedia.org/wiki/Principles_of_Compiler_Design)
+* [Compiler construction for Digital Computers](https://www.google.com/books/edition/Compiler_Construction_for_Digital_Comput/CJUEAQAAIAAJ)
+* [A Compiler Generator](https://www.google.com/books/edition/A_Compiler_Generator/KecmAAAAMAAJ?hl=en),
 * [Overview TOC AIX](https://www.ibm.com/developerworks/rational/library/overview-toc-aix/index.html)
 
 [^1]: The first edition described a register allocation scheme that was
