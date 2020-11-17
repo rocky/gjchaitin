@@ -1,6 +1,6 @@
 As a friend of Greg Chaitin, and an avid follower and reader of his writings, one thing that strikes me is that there is very little mentioned about the 25 years or so that he spent at IBM, most of it at IBM Research. Perhaps the situation is analogous to that of [Archimedes](https://en.wikipedia.org/wiki/Archimedes). His mathematical works are well preserved, but we don't really know the extent of his considerable practical engineering and invention.
 
-Greg started out as a IBM Field Engineer in Argentina and I came to know him when he worked at IBM Research.
+Greg started out as a IBM Service Engineer in Argentina and I came to know him when he worked at IBM Research.
 
 We worked on a [compiler](https://en.wikipedia.org/wiki/PL/8) for IBM's first RISC, then called [801](https://en.wikipedia.org/wiki/IBM_801). It later became known as the [POWER](https://en.wikipedia.org/wiki/IBM_POWER_microprocessors) architecture.
 
