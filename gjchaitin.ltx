@@ -80,12 +80,12 @@ an expression node could have a number of fields.
 The compiler also consisted of a number of ``phases,'' as found in
 many compilers. In particular, the phases were:
 
-\begin{itemize}
+\begin{enumerate}
 \item A parse phase
 \item A code-improvement phase
 \item A register-allocation phase
 \item A final assembly to machine-code phase
-\end{itemize}
+\end{enumerate}
 
 One day, a bug turned up because a field that was needed in the final
 assembly phase got mangled. That field was called ``ppb'' for ``phil's
@@ -147,7 +147,8 @@ well.  When a register went ``dead''\cite{live}---the last time a
 value from that register was used---it had a tick mark after it.
 
 All of this was needed in the register-allocation process, and the
-concise and precise language Greg invented for this purpose made it very easy to understand what was going on and how registers got
+concise and precise language Greg invented for this purpose made it
+very easy to understand what was going on and how registers got
 allocated or ``colored.''
 
 Nowadays, it is not uncommon in compilers to transform the tree
@@ -160,9 +161,9 @@ register-based intermediate languages.
 
 Greg's work was contemporaneous with the first edition of the Dragon
 Book\cite{dragon} which popularized this idea.\footnote{The first
-  edition described a register allocation scheme that was suited for
-  stack-architectures CPUs. Later editions of this book switched to
-  describing the register allocation scheme that Greg developed.}
+edition described a register allocation scheme that was suited for
+stack-architecture CPUs. Later editions of this book switched to
+describing the register allocation scheme that Greg developed.}
 Compare this with the earlier books by David Gries\cite{gries} or
 McKeeman et al.\cite{mckeeman}.  In the 1970s, there were several
 compilers that worked off of a tree representation. Some interpreters,

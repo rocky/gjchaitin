@@ -20,10 +20,10 @@ Before Greg's involvement, after the input source program was parsed, informatio
 
 The compiler also consisted of a number of "phases," as found in many compilers. In particular, the phases were:
 
-- A parse phase
-- A code-improvement phase
-- A register-allocation phase
-- A final assembly to machine-code phase
+1. A parse phase
+1. A code-improvement phase
+1. A register-allocation phase
+1. A final assembly to machine-code phase
 
 One day, a bug turned up because a field that was needed in the final assembly phase got mangled. That field was called "ppb" for "phil's private bits." Phil worked on the parse phase.
 
@@ -48,7 +48,7 @@ Nowadays, it is not uncommon in compilers to transform the tree representation t
 register-based representation. But circa 1982 it was not a widespread practice. Greg's work predates the invention of Single Static Assignment, or SSA, which followed shortly afterward at IBM, presumably under Greg's influence. Both promoted the proliferation of register-based intermediate languages.
 
 Greg's work was contemporaneous with the first edition of the Dragon Book which popularized this idea. (The first edition described a register allocation scheme that was
-suited for stack-architectures CPUs. Later editions of this book switched to describing the register allocation scheme that Greg developed.)
+suited for stack-architecture CPUs. Later editions of this book switched to describing the register allocation scheme that Greg developed.)
 
 Compare this with the earlier books by David Griesor McKeeman et al. In the 1970s, there were several compilers that worked off of a tree representation. Some interpreters, such as those for Lisp, Perl5, or Korn shell, still work off of expression trees.
 
