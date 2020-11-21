@@ -93,7 +93,7 @@ Greg wrote computer simulations for five well-known physical models:
     Schrödinger, and
 -   sums over all histories according to Feynman.
 
-Each of these simulations fits on a single page of APL2 code. This includes setting up the data and drawing plots of the output. In fact this code was so short and elegant that for a while one of the 30-line simulations replaced the picture that had been hanging in his office.
+Each of these simulations fits on a single page of APL2 code. This includes setting up the data and drawing plots of the output. In fact this code was so short and elegant that for a while several of the 30-line simulations replaced the picture that had been hanging in his office.
 
 References
 ----------
