@@ -96,8 +96,8 @@ his phase came after Phil's phase, he could do a little code
 optimization of his own and reuse phil's private bits since, as he put
 it, Phil wasn't looking. That way he wouldn't have to add another
 temporary field which would make the expression-tree structure larger
-and more unwieldy. The phrase used at the time was ``peter's private
-bits.''
+and more unwieldy. So ``phil's private bits'' became ``peter's private
+bits'' when Phil wasn't looking.
 
 Unfortunately Hank, who worked on the final assembly phase, needed the
 information stored in phil's private bits. So, phil's private bits
@@ -196,22 +196,21 @@ Fourier Transform. However it is not something usually mentioned in
 conjunction with programming.
 
 This kind of elegance and simplification was not an isolated incident,
-but part of the fiber of Greg's programming. Here are some more
-examples.
+but part of the fiber of Greg's programming. Here is another example.
 
 After this work was completed, Greg embarked on a totally different
 aspect of the compiler, the binder, sometimes called a
 linker. This is a piece of code that is needed after the source code
 is compiled into machine code and just before running or
 loading the code. It adjusts the code so that it can work in an
-arbitrary section of computer memory.
+arbitrary section of computer virtual memory.
 
 To do this, the compiler needed to be modified so that it used only
 those instructions that were position-independent. Nowadays this is
 called PIC (Position-Independent Code)\cite{PIC}. In other words,
 certain instructions or instruction formats had to be avoided. These
-typically include the `load from memory' and `store from memory'
-instructions.
+typically include the ``absolute address'' forms of the ``load from
+memory'' and ``store from memory'' instructions.
 
 The first versions of Greg's binder started out by more
 or less following what some other clever IBM Researchers, notably

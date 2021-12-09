@@ -12,7 +12,7 @@ It is surprising there is not more about this period in biographical or autobiog
 
 A little background.
 
-I started working at IBM Research right after getting a masters' degree. Although I had worked as a programmer and written code in school and on part-time jobs, this was my first full-time job at any large company. The project I worked on was an optimizing compiler. The code was hundreds of thousands of lines long, written by maybe a dozen people over several years. This kind of scale is still true for many compilers and interpreters. The "optimizing" part of "optimizing compiler" means that clever techniques are applied to make the code run fast.
+tI started working at IBM Research right after getting a masters' degree. Although I had worked as a programmer and written code in school and on part-time jobs, this was my first full-time job at any large company. The project I worked on was an optimizing compiler. The code was hundreds of thousands of lines long, written by maybe a dozen people over several years. This kind of scale is still true for many compilers and interpreters. The "optimizing" part of "optimizing compiler" means that clever techniques are applied to make the code run fast.
 
 Needless to say in any such endeavor of this size there is bound to be a lot of chaos. Here is an example that I encountered in watching a bug get fixed.
 
@@ -27,7 +27,7 @@ The compiler also consisted of a number of "phases," as found in many compilers.
 
 One day, a bug turned up because a field that was needed in the final assembly phase got mangled. That field was called "ppb" for "phil's private bits." Phil worked on the parse phase.
 
-Peter, who worked on the code-improvement phase, occasionally needed to store a bit of information for his purposes. He figured that since his phase came after Phil's phase, he could do a little code optimization of his own and reuse phil's private bits since, as he put it, Phil wasn't looking. That way he wouldn't have to add another temporary field which would make the expression-tree structure larger and more unwieldy. The phrase used at the time was "peter's private bits."
+Peter, who worked on the code-improvement phase, occasionally needed to store a bit of information for his purposes. He figured that since his phase came after Phil's phase, he could do a little code optimization of his own and reuse phil's private bits since, as he put it, Phil wasn't looking. That way he wouldn't have to add another temporary field which would make the expression-tree structure larger and more unwieldy. So "phils private bits" became "peter's private bits" when Phil wasn't looking.
 
 Unfortunately Hank, who worked on the final assembly phase, needed the information stored in phil's private bits. So, phil's private bits that was common for a code base of this size.
 
@@ -39,7 +39,7 @@ In contrast to the looseness described in the Phil/Peter bug, there was strict c
 
 As I said, the *algorithm* behind the register allocation can be found in a couple of papers. However what you won't find printed anywhere is a description of the excellent engineering that made this work. So I'd like to describe this next.
 
-To support working on the register-coloring algorithm, Greg invented a register-transfer language and its display format. It has a couple of features not found in many register-transfer languages, such as a way to indicate that an instruction has more than one output. For example the when the operation completed. So in the register-transfer language, both of these registers were on the left-hand side of an assignment statement. If an instruction, like 'add', set a condition bit such as 'carry', that bit was indicated as well. When a register went
+To support working on the register-coloring algorithm, Greg invented a register-transfer language and its display format. It has a couple of features not found in many register-transfer languages, such as a way to indicate that an instruction has more than one output. For example on the IBM System/370 the a 32 bit multiply is done, the output is stored in a pair of registers when the multiplication completes. So in the register-transfer language, both of these registers were on the left-hand side of an assignment statement. If an instruction, like 'add', set a condition bit such as 'carry', that bit was indicated as an output as well. When a register went
 "dead"---the last time a value from that register was used---it had a tick mark after it.
 
 All of this was needed in the register-allocation process, and the concise and precise language Greg invented for this purpose made it very easy to understand what was going on and how registers got allocated or "colored."
@@ -52,17 +52,19 @@ suited for stack-architecture CPUs. Later editions of this book switched to desc
 
 Compare this with the earlier books by David Griesor McKeeman et al. In the 1970s, there were several compilers that worked off of a tree representation. Some interpreters, such as those for Lisp, Perl5, or Korn shell, still work off of expression trees.
 
+When Greg joined the project, the final assembly phase, Phase IV, used the expression trees built in Phase I. There was quite a bit of engineering and coding that Greg had to do to convert the expression trees into his register-transfer language. But he also had to do the work to convert it back again into the expression trees after coloring so that Phase IV could do its work! That idea that you could wall yourself off from the surrounding chaos blew my mind, but by doing so Greg had created a little corner of the world with order in the middle of a big mess.
+
 When Greg joined the project, the final assembly phase, Phase IV, used the expression trees built in Phase I, so there was quite a bit of engineering and coding that Greg had to do to convert the expression trees into his register-transfer language. And since the assembly phase results *back* into expression trees after coloring so that Phase IV could do its work. That idea that you could wall yourself off from the surrounding chaos blew my mind, but by doing so Greg had created a little corner of the world with order in the middle of a big mess.
 
-Eventually, Greg convinced Hank, the person who worked on the phase after Greg's phase, to use his more elegant register-transfer language to drive final assembly. Hank told me that in doing so, his code got a lot better, simpler, shorter, and easier to maintain.
+Eventually, Greg convinced Hank, the person who worked on the phase after Greg's phase, to use his more elegant register-transfer language to drivae final assembly. Hank told me that in doing so, his code got a lot better, simpler, shorter, and easier to maintain.
 
 I have used the technique of coming up with an elegant or more appropriate representation and language in which to think and describe things in, even if it means writing additional and messy engineering code to do transformations both into and out of your language. Each time this comes up there is great benefit. I am grateful to Greg for adding this technique to my programming arsenal. In algorithms you sometimes find this idea in conjunction with, say, the Discrete Fast Fourier Transform. However it is not something usually mentioned in conjunction with programming.
 
-This kind of elegance and simplification was not an isolated incident, but part of the fiber of Greg's programming. Here are some more examples.
+This kind of elegance and simplification was not an isolated incident, but part of the fiber of Greg's programming. Here is another example.
 
-After this work was completed, Greg embarked on a totally different aspect of the compiler, the binder, sometimes called a linker. This is a piece of code that is needed after the source code is compiled into machine code and just before running or loading the code. It adjusts the code so that it can work in an arbitrary section of computer memory.
+After this work was completed, Greg embarked on a totally different aspect of the compiler, the binder, sometimes called a linker. This is a piece of code that is needed after the source code is compiled into machine code and just before running or loading the code. It adjusts the code so that it can work in an arbitrary section of computer virtual memory.
 
-To do this, the compiler needed to be modified so that it used only those instructions that were position-independent. Nowadays this is called PIC Position-Independent Code) In other words, certain instructions or instruction formats had to be avoided. These typically include the 'load from memory' and 'store from memory' instructions.
+To do this, the compiler needed to be modified so that it used only those instructions that were position-independent. Nowadays this is called PIC Position-Independent Code) In other words, certain instructions or instruction formats had to be avoided. These typically include the "absolute address" forms of "load from memory" and "store from memory" instructions.
 
 The first versions of Greg's binder started out by more or less following what some other clever IBM Researchers, notably Chris Stephenson, did to perform this process on conventional IBM System/370 hardware. In the beginning Greg probably knew no more about this process than any casual programmer would. He finished a preliminary version of the code which worked and reflected his understanding of Chris's code for the 370. It was probably more or less a translation of that code adapted to the new hardware instructions and architecture.
 
